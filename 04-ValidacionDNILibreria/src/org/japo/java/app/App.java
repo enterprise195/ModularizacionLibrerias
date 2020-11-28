@@ -26,11 +26,13 @@ import org.japo.java.libraries.UtilesPrimitivos;
 public class App {
 
     public static final int DNI_NUM = 12345678;
-    public static final char DNI_CTR = 'Z';
+    public static final char DNI_CTR = 'X';
     public static final String LETRAS = "TRWAGMYFPDXBNJZSQVHLCKE";
     
     public static final String MSG_DNI = "DNI ......: ";
     public static final String MSG_VAL = "Validez ..: ";
+    public static final String MSG_SI = "Correcto";
+    public static final String MSG_NO = "Incorrecto";
     
     public void launchApp() {
         System.out.println("VALIDACIÓN DE DNI");
@@ -41,14 +43,10 @@ public class App {
         //Separador
         System.out.println("---");
         
-        boolean validacionDni = UtilesPrimitivos.validar(DNI_NUM, DNI_CTR);
+        boolean validacionDni = UtilesPrimitivos.validar(
+                DNI_NUM, DNI_CTR, LETRAS);
         
-        switch (validacionDni) {
-            case true:
-                System.out.printf("%sCoreccto", MSG_VAL);
-                break;
-            case false:
-                System.out.printf("%sIncorrecto", MSG_VAL);
+        System.out.printf("%s%s%n", MSG_VAL, validacionDni ? MSG_SI : MSG_NO);
         }
     }
     

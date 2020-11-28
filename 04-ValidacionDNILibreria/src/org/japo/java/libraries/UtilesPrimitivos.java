@@ -26,19 +26,12 @@ public class UtilesPrimitivos {
         return media;
     }
         
-    public static final boolean validar(int num, char ctr) {
-        char letraDNI = calcular(num);
-        
-        if (letraDNI == ctr) {
-            System.out.println("Validez ..: Correcto");
-        } else {
-            System.out.println("Validez ..: Incorrecto");
-        }
-        return letraDNI;
+    public static final boolean validar(int num, char ctr, String letras) {       
+        return calcular(num, letras) == ctr;
     }
     
-    public static final char calcular(int num) {
+    public static final char calcular(int num, String letras) {
         int letraDni = num % 23;
-        return (char)letraDni;
+        return (letras.charAt(letraDni));
     }
 }

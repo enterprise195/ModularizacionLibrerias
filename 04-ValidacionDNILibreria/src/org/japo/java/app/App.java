@@ -49,5 +49,3 @@ public class App {
         System.out.printf("%s%s%n", MSG_VAL, validacionDni ? MSG_SI : MSG_NO);
         }
     }
-    
-}
